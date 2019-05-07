@@ -109,7 +109,7 @@ public class MicroFlutterMipushPlugin implements MethodCallHandler, EventChannel
         public void handleMessage(Message msg) {
             String s = (String) msg.obj;
 
-            eventSink.success(s);
+//            eventSink.success(s);
 //            if (!TextUtils.isEmpty(s)) {
 //                Toast.makeText(context, s, Toast.LENGTH_LONG).show();
 //            }
