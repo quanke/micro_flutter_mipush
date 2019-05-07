@@ -18,14 +18,14 @@ class _MyAppState extends State<MyApp> {
 
   var appKey = '5611799384368';
 
-  MicroFlutterMipush microFlutterMipush;
+  Mipush microFlutterMipush;
 
   @override
   void initState() {
     super.initState();
     initPlatformState();
-    microFlutterMipush = MicroFlutterMipush();
-    microFlutterMipush.receiveBroadcast();
+    microFlutterMipush = Mipush();
+//    microFlutterMipush.receiveBroadcast();
   }
 
   @override
@@ -33,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     super.dispose();
     //取消监听
     if (microFlutterMipush != null) {
-      microFlutterMipush.dispose();
+//      microFlutterMipush.dispose();
     }
   }
 
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await MicroFlutterMipush.init(appId, appKey);
+      platformVersion = await Mipush.init(appId, appKey);
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
